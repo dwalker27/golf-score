@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-import HoleList from './HoleList';
-import PlayerList from './PlayerList';
-import $ from 'jquery';
+import React from 'react';
 
 const Settings = (props) => {
   return (
