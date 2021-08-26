@@ -16,6 +16,8 @@ function App() {
   const [showHoleList, setShowHoleList] = useState(false);
   const [showPlayerList, setShowPlayerList] = useState(false);
   const [showScorecard, setShowScorecard] = useState(false);
+  const [scores, setScores] = useState([]);
+  const [totals, setTotals] = useState([]);
 
   function startGame() {
     console.log(holeList);
@@ -42,7 +44,8 @@ function App() {
       {showSettings && <Settings setHoles={setHoles} setPlayers={setPlayers} setStartPar={setStartPar} handleNextScreen={handleNextScreen} />}
       {showHoleList && <HoleList holes={holes} par={startPar} setHoleList={setHoleList}></HoleList>}
       {showPlayerList && <PlayerList players={players} setPlayerList={setPlayerList}></PlayerList>}
-      {showScorecard && <Scorecard holes={holes} players={players} holeList={holeList} playerList={playerList} />}
+      {showScorecard && <Scorecard holes={holes} players={players} holeList={holeList} playerList={playerList}
+        scores={scores} setScores={setScores} totals={totals} setTotals={setTotals} />}
       {showHoleList && showPlayerList && <p><button id="start" name="start" onClick={startGame}>Start Game</button></p>}
     </div>
   );
