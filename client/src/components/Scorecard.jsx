@@ -1,9 +1,19 @@
 import React from 'react'
 
-const Scorecard = () => {
+const Scorecard = (props) => {
   return (
     <div>
-      test
+      <table>
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+      </table>
     </div>
   )
 }

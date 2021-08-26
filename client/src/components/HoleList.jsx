@@ -9,11 +9,14 @@ const HoleList = (props) => {
   let parTotal = props.par * props.holes;
 
   const handleChange = () => {
+    let tempList = [];
     parTotal = 0;
     for (let i = 1; i <= props.holes; i++) {
-      parTotal += parseInt($(`#${i}`).val());
+      parTotal += parseInt($(`#hole-${i}`).val());
+      tempList.push(parseInt($(`#hole-${i}`).val()));
     }
-    $("#total").html(parTotal)
+    $("#total").html(parTotal);
+    props.setHoleList(tempList);
   }
 
   if (props.holes > 0) {
@@ -22,10 +25,8 @@ const HoleList = (props) => {
   }
 
   for (let i = 1; i <= props.holes; i++) {
-    holes.push(<tr key={i}><td>{i}</td><td><input type="number" id={i} defaultValue={props.par} onChange={handleChange} min="1" max="9" /></td></tr>);
-
+    holes.push(<tr key={i}><td>{i}</td><td><input type="number" id={"hole-" + i} defaultValue={props.par} onChange={handleChange} min="1" max="9" /></td></tr>);
   }
-  console.log(holes);
 
   return (
     <div>
