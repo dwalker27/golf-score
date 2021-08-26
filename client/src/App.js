@@ -42,8 +42,8 @@ function App() {
   return (
     <div className="App">
       {showSettings && <Settings setHoles={setHoles} setPlayers={setPlayers} setStartPar={setStartPar} handleNextScreen={handleNextScreen} />}
-      {showHoleList && <HoleList holes={holes} par={startPar} setHoleList={setHoleList}></HoleList>}
       {showPlayerList && <PlayerList players={players} setPlayerList={setPlayerList}></PlayerList>}
+      {showHoleList && <HoleList holes={holes} par={startPar} setHoleList={setHoleList}></HoleList>}
       {showScorecard && <Scorecard holes={holes} players={players} holeList={holeList} playerList={playerList}
         scores={scores} setScores={setScores} totals={totals} setTotals={setTotals} />}
       {showHoleList && showPlayerList && <p><button id="start" name="start" onClick={startGame}>Start Game</button></p>}

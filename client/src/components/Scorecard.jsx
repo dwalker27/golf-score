@@ -26,7 +26,7 @@ const Scorecard = (props) => {
 
     for (let i = 0; i < totals.length; i++) {
       totals[i] = totals[i] - parScores[i];
-      totalList.push(<th>{totals[i]}</th>)
+      totalList.push(<th>{totals[i] === 0 ? "E" : totals[i] > 0 ? "+" + totals[i] : totals[i]}</th>)
     }
 
     return (totalList);
@@ -77,7 +77,7 @@ const Scorecard = (props) => {
     scores.push([<td>{parseInt(i) + 1}</td>, <td>{props.holeList[i]}</td>]);
     let tempCols = [];
     for (let j in props.playerList) {
-      scores[i].push(<td key={i + "-" + j}><input type="number" id={"score" + parseInt(j) + "-" + parseInt(i)} min="0" max="99" defaultValue="" onChange={handleChange}></input></td>)
+      scores[i].push(<td key={i + "-" + j}><input type="number" id={"score" + parseInt(j) + "-" + parseInt(i)} min="1" max="99" defaultValue="" onChange={handleChange}></input></td>)
       tempCols.push("");
     }
     tempList.push(tempCols);
